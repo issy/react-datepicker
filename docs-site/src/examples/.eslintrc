@@ -30,6 +30,8 @@
         "PropTypes": false,
         "CalendarContainer": false,
         "subMonths": false,
-        "forwardRef": false
+        "forwardRef": false,
+        "isAfter": false,
+        "isBefore": false
     }
 }
