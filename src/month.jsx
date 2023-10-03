@@ -507,6 +507,7 @@ export default class Month extends React.Component {
       monthClassName,
       excludeDates,
       includeDates,
+      filterDate,
     } = this.props;
     const _monthClassName = monthClassName
       ? monthClassName(utils.setMonth(day, m))
@@ -518,7 +519,7 @@ export default class Month extends React.Component {
       _monthClassName,
       {
         "react-datepicker__month-text--disabled":
-          (minDate || maxDate || excludeDates || includeDates) &&
+          (minDate || maxDate || excludeDates || includeDates || filterDate) &&
           utils.isMonthDisabled(labelDate, this.props),
         "react-datepicker__month-text--selected": this.isSelectedMonth(
           day,
@@ -674,6 +675,7 @@ export default class Month extends React.Component {
             aria-label={this.getAriaLabel(m)}
             aria-current={this.isCurrentMonth(day, m) ? "date" : undefined}
             aria-selected={this.isSelectedMonth(day, m, selected)}
+            aria-disabled={this.isDisabled()}
           >
             {this.getMonthContent(m)}
           </div>
